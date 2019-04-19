@@ -110,9 +110,10 @@ async function doSearch(imgURL, db, debug = false) {
                 await ascii2d(imgURL, db, debug = false).then(res=>{
                     const $ = Cheerio.load(res.data);
                     url = $('.row.item-box h6>a:nth-of-type(1)').eq(0).attr('href');
-                    similarity = '??';
                     title = $('.row.item-box h6>a:nth-of-type(1)').eq(0).text();
                     thumbnail = 'https://ascii2d.net'+$('.row.item-box>div>img').eq(1).attr('src');
+                    warnMsg += CQ.escape(`相似度[${similarity}%]过低，使用Ascii2d進行搜索\n`);
+                    similarity = '??';
                 });
             //warnMsg += CQ.escape(`相似度[${similarity}%]过低，如果这不是你要找的图，那么可能：确实找不到此图/图为原图的局部图/图清晰度太低/搜索引擎尚未同步新图\n`);
 
