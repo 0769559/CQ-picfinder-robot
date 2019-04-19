@@ -10,7 +10,7 @@ QQLight的接口不如酷Q完整，部分功能無法很好的實現，但能夠
 
 ．群消息改為白名單才進行處理。
 
-．加入 [Ascii2d](https://ascii2d.net/) 的搜索，當Saucenao時相似度過低自動轉換至Ascii2d。
+．加入 [Ascii2d](https://ascii2d.net/) 的搜索，當Saucenao時相似度過低自動轉換至Ascii2d。然而這個網站好像有使用頻率限制，容易GET不到東西。
 
 # CQ-picfinder-robot
 
@@ -82,7 +82,7 @@ npm run pm2log
         "addFriendAnswers": [],    //根据问题回答同意好友申请（后续详解
         "autoAddGroup": false,     //自动同意入群申请（false同上，但可以用命令手动允许，后续有说明）
         "searchLimit": 30,         //每名用户每日搜索次数限制
-        "textMode": true,          //文字模式发送搜图结果（酷QAir无法发送分享）
+        "textMode": true,          //文字模式发送搜图结果（發送圖片Lag或常常無法顯示可以關閉）
         //复读机
         "repeat": {
             "enable": true,        //开关

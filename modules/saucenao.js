@@ -117,7 +117,7 @@ async function doSearch(imgURL, db, debug = false) {
                 }).catch(()=>{ console.log('ascii2d搜索超時') });
             }
 
-            //thumbnail = await ''; //圖片好像拖慢速度?
+            if(config.picfinder.textMode) thumbnail = await '';
 
             //回复的消息
             msg = await CQ.share(url, `[${similarity}%] ${title}`, origURL, thumbnail, source);
