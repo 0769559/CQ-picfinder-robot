@@ -1,8 +1,16 @@
-# QQLight 版本
+# QQLight
 
-修改為QQLight機器人版本
+修改為 [QQLight](https://www.52chat.cc) 機器人版本
 
-QQLight的接口不如酷Q完整，部分功能無法很好的實現，但能夠免費發送圖片。
+QQLight的接口不如酷Q完整，部分功能無法很好的實現，但能夠免費發送圖片
+
+# 調整項目
+
+．將酷Q的API替換為QQLight，share功能直接以一般訊息方式替代。
+
+．群消息改為白名單才進行處理。
+
+．加入 [Ascii2d](https://ascii2d.net/) 的搜索，當Saucenao時相似度過低自動轉換至Ascii2d。
 
 # CQ-picfinder-robot
 
@@ -10,17 +18,15 @@ QQLight的接口不如酷Q完整，部分功能無法很好的實現，但能夠
 
 ## 部署流程
 
-### 1. 酷Q
+### 1. QQLight
 
-本插件依赖 [酷Q机器人](https://cqp.cc) 以及相关插件和SDK运作
+本插件依赖 [QQLight](https://www.52chat.cc) 以及相关插件和SDK运作
 
 Pro 不是必须的，Air 也可
 
-### 2. CoolQ HTTP API 插件
+### 2. qqlight-websocket 插件
 
-插件基于 [CoolQ HTTP API 插件](https://github.com/richardchien/coolq-http-api) 的 [node-cq-websocket](https://github.com/momocow/node-cq-websocket) SDK 进行开发，因此你需要在你的酷Q上启用并配置 CoolQ HTTP API 插件
-
-如何找到配置文件请参考 [插件使用文档](https://cqhttp.cc/docs/4.2/#/Configuration)，**对于本项目，必须将`use_ws`设置为`true`**，其他配置项自由发挥
+插件基于 [qqlight-websocket 插件](https://github.com/Chocolatl/qqlight-websocket/releases) 的 [qqlight-websocket-node](https://github.com/Chocolatl/qqlight-websocket-node) SDK 进行开发，因此你需要在你的QQLight上启用并配置 qqlight-websocket 插件
 
 ### 3. 开搞
 
@@ -68,15 +74,6 @@ npm run pm2log
 
 ```javascript
 {
-    //前面这几项配置请参考https://github.com/momocow/node-cq-websocket/blob/master/docs/api/CQWebSocket.md#cqwebsocketoption
-    "host": "127.0.0.1",
-    "port": 6700,
-    "enableAPI": true,
-    "enableEvent": true,
-    "access_token": "",
-    "reconnection": true,
-    "reconnectionAttempts": 10,
-    "reconnectionDelay": 5000,
     //以下开始都是搜图机器人配置
     "picfinder": {
         "debug": false,            //调试模式，启用后会在控制台输出每次查询的返回文本
