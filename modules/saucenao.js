@@ -112,7 +112,7 @@ async function doSearch(imgURL, db, debug = false) {
                     url = $('.row.item-box h6>a:nth-of-type(1)').eq(0).attr('href');
                     title = $('.row.item-box h6>a:nth-of-type(1)').eq(0).text();
                     thumbnail = 'https://ascii2d.net'+$('.row.item-box>div>img').eq(1).attr('src');
-                    warnMsg += CQ.escape(`相似度[${similarity}%]过低，使用Ascii2d進行搜索\n`);
+                    warnMsg += CQ.escape(`SauceNao相似度[${similarity}%]过低，使用Ascii2d進行搜索\n`);
                     similarity = '??';
                 }).catch(()=>{ console.log('ascii2d搜索超時') });
             }
