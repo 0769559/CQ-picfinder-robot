@@ -1,5 +1,9 @@
 # CQ-picfinder-robot
 
+修改為QQLight機器人版本
+
+QQLight的接口不如酷Q完整，部分功能無法很好的實現，但能夠免費發送圖片。
+
 这是一个以 Nodejs 编写的酷Q机器人插件，用于通过 [Saucenao](https://saucenao.com/) 和 [WhatAnime](https://trace.moe) 对收到的图片进行搜图、搜番、搜本子，并夹带了许多娱乐向功能（。）
 
 ## 部署流程
@@ -33,7 +37,7 @@ npm i
 
 配置完成后先启用 CoolQ HTTP API 插件 再运行本程序
 
-可以直接使用`npm start`命令启动，可以直接看到运行日志  
+可以直接使用`npm start`命令启动，可以直接看到运行日志
 实际正式使用建议用`pm2`守护运行
 
 ```bash
@@ -138,7 +142,13 @@ npm run pm2log
             "setuError": "瑟图服务器爆炸惹_(:3」∠)_",
             //其他不满足发送setu的条件
             "setuReject": "很抱歉，该功能暂不开放_(:3」」"
-        }
+        },
+        "ocr": {
+            "defaultLANG": "eng",
+            "apikey": ""
+        },
+        "groupWhite": [], //白名單群組，讓機器人只在特定群啟用
+        "QQLightTempImage": "" //QQLight暫存位置，需要從暫存檔取得圖片url
     },
     //数据库配置（用于缓存搜图结果）
     "mysql": {
@@ -232,7 +242,7 @@ TX 十分坑的一点就是，如果你在机器人QQ里设置好友验证方式
 
 因此如果用户数量较大可能会突破500，比较推荐使用“需要验证信息”或“需要回答问题并由我确认”，然后根据机器人配置在机器人这里通过好友请求，即可以添加双向好友
 
-如果选择“需要验证信息”，则是否通过直接由`autoAddFriend`设置项决定  
+如果选择“需要验证信息”，则是否通过直接由`autoAddFriend`设置项决定
 如果选择“需要回答问题并由我确认”，则在`autoAddFriend`为`true`，且`addFriendAnswers`数组不为空的情况下会进行判断，只有对方的回答与`addFriendAnswers`的设置完全一致才会同意
 
 ### `addFriendAnswers`配置规则
@@ -271,11 +281,11 @@ TX 十分坑的一点就是，如果你在机器人QQ里设置好友验证方式
 
 以下是两个反代站点的使用配置示例：
 
-- https://pixiv.cat  
-  则配置为`"pximgProxy": "https://i.pixiv.cat/",`  
+- https://pixiv.cat
+  则配置为`"pximgProxy": "https://i.pixiv.cat/",`
   最终得到图片地址 https://i.pixiv.cat/img-original/img/2019/01/16/01/49/12/72685648_p0.jpg
-- https://pixiv.moe  
-  则配置为`"pximgProxy": "https://api.pixiv.moe/v2/image/i.pximg.net/",`  
+- https://pixiv.moe
+  则配置为`"pximgProxy": "https://api.pixiv.moe/v2/image/i.pximg.net/",`
   最终得到图片地址 https://api.pixiv.moe/v2/image/i.pximg.net/img-original/img/2019/01/16/01/49/12/72685648_p0.jpg
 
 `pximgProxy`为空字符串时不会启用该功能，直接使用本程序自建的本地反代下载图片以解决防盗链问题，但本质上是直连下载

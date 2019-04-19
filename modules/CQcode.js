@@ -1,6 +1,6 @@
 /*
- * @Author: JindaiKirin 
- * @Date: 2018-07-11 18:26:45 
+ * @Author: JindaiKirin
+ * @Date: 2018-07-11 18:26:45
  * @Last Modified by: Jindai Kirin
  * @Last Modified time: 2019-03-24 20:17:05
  */
@@ -17,13 +17,13 @@ const textMode = config.picfinder.textMode;
  * @returns 转义后的字符串
  */
 function escape(str, insideCQ = false) {
-	let temp = str.replace(/&/g, '&amp;');
-	temp = temp.replace(/\[/g, '&#91;');
-	temp = temp.replace(/\]/g, '&#93;');
-	if (insideCQ) {
-		temp = temp.replace(/,/g, '&#44;').replace(/(\ud83c[\udf00-\udfff])|(\ud83d[\udc00-\ude4f\ude80-\udeff])|[\u2600-\u2B55]/g, ' ');
-	}
-	return temp;
+    let temp = str.replace(/&/g, '&amp;');
+    temp = temp.replace(/\[/g, '&#91;');
+    temp = temp.replace(/\]/g, '&#93;');
+    if (insideCQ) {
+        temp = temp.replace(/,/g, '&#44;').replace(/(\ud83c[\udf00-\udfff])|(\ud83d[\udc00-\ude4f\ude80-\udeff])|[\u2600-\u2B55]/g, ' ');
+    }
+    return temp;
 }
 
 
@@ -34,7 +34,7 @@ function escape(str, insideCQ = false) {
  * @returns CQ码 图片
  */
 function img(file) {
-	return "[CQ:image,file=" + escape(file, true) + "]";
+    return "[QQ:pic=" + escape(file, true) + "]";
 }
 
 
@@ -48,9 +48,8 @@ function img(file) {
  * @param {string} source 源URL
  * @returns CQ码 分享链接
  */
-function share(url, title, content, image, source) {
-	if (textMode) return `${title}\n${img(image)}\n${url}` + (source ? `\nSource: ${source}` : '');
-	return `[CQ:share,url=${escape(url, true)},title=${escape(title, true)},content=${escape(content, true)},image=${escape(image, true)}]`;
+function share(url, title, content, image) {
+    return `${title}\n${img(image)}\n${url}`;
 }
 
 
@@ -61,13 +60,13 @@ function share(url, title, content, image, source) {
  * @returns CQ码 @
  */
 function at(qq) {
-	return "[CQ:at,qq=" + qq + "] ";
+    return "[QQ:at=" + qq + "] ";
 }
 
 
 export default {
-	escape,
-	share,
-	img,
-	at
+    escape,
+    share,
+    img,
+    at
 };
