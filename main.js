@@ -144,9 +144,11 @@ function debugRrivateAndAtMsg(e, context) {
 function groupMsg(e, context) {
     if (!commonHandle(e, context)) return;
 
-    //非白名單群組
-    if(!setting.groupWhite.includes(context.group_id)) return;
-
+    //群組白名單模式
+    if(setting.groupWhiteMode){
+        if(!setting.groupWhite.includes(context.group_id)) return;
+    }
+    
     //进入或退出搜图模式
     let {
         group_id,

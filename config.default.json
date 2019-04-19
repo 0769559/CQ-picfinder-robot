@@ -17,7 +17,7 @@
             "enable": true,
             "allowPM": true,
             "pximgProxy": "https://api.pixiv.moe/v2/image/i.pximg.net/",
-            "deleteTime": 60,
+            "deleteTime": 0,
             "cd": 600,
             "limit": 30,
             "whiteGroup": [],
@@ -51,6 +51,7 @@
             "defaultLANG": "eng",
             "apikey": ""
         },
+        "groupWhiteMode": false,
         "groupWhite": [],
         "QQLightTempImage": "D:/工具/QQLight/temp/image/"
     },

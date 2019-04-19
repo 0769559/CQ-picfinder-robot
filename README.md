@@ -145,9 +145,10 @@ npm run pm2log
         "ocr": {
             "defaultLANG": "eng",
             "apikey": ""
-        },
+        },,
+        "groupWhiteMode": true, //是否啟用白名單模式
         "groupWhite": [], //白名單群組，讓機器人只在特定群啟用
-        "QQLightTempImage": "" //QQLight暫存位置，需要從暫存檔取得圖片url
+        "QQLightTempImage": "" //QQLight暫存位置，需要從暫存檔取得圖片url，結尾必須加斜槓
     },
     //数据库配置（用于缓存搜图结果）
     "mysql": {
