@@ -117,8 +117,6 @@ async function doSearch(imgURL, db, debug = false) {
                 }).catch(()=>{ console.log('ascii2d搜索超時') });
             }
 
-            if(config.picfinder.textMode) thumbnail = await '';
-
             //回复的消息
             msg = await CQ.share(url, `[${similarity}%] ${title}`, origURL, thumbnail, source);
 
@@ -173,6 +171,8 @@ async function doSearch(imgURL, db, debug = false) {
     });
 
     if (config.picfinder.debug) console.log(`${new Date().toLocaleString()} [saucenao][${hostIndex}]\n${msg}`);
+
+    if(config.picfinder.textMode) msg = msg.replace(/\[QQ:pic=.+\]/,'');
 
     return {
         success,
