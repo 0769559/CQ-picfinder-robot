@@ -34,6 +34,7 @@ function escape(str, insideCQ = false) {
  * @returns CQ码 图片
  */
 function img(file) {
+    if(!file) return '';
     return "[QQ:pic=" + escape(file, true) + "]";
 }
 

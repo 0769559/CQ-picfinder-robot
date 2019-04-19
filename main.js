@@ -290,9 +290,8 @@ async function searchImg(context, customDB = -1) {
                 let ret = await saucenao(img.url, db, hasCommand("debug"));
                 let success = ret.success; //如果有未成功的则不缓存
 
-                replyMsg(context, ret.msg);
+                replyMsg(context, getTime()+'\n'+ret.msg);
                 replyMsg(context, ret.warnMsg);
-                replyMsg(context, getTime()+'\n圖像搜索完畢');
 
                 //如果需要缓存
                 let needCacheMsgs;
