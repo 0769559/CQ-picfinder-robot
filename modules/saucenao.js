@@ -123,6 +123,7 @@ async function doSearch(imgURL, db, debug = false) {
                         let r_title = '特徵查找:'+$r('.row.item-box h6>a:nth-of-type(1)').eq(0).text();
                         let r_thumbnail = 'https://ascii2d.net'+$r('.row.item-box>div>img').eq(1).attr('src');
                         exts.push(CQ.share(r_url, `${r_title} `, origURL, r_thumbnail, source));
+                        exts.push(CQ.img(r_thumbnail));
                     })
                 }).catch(()=>{ console.log('ascii2d搜索超時') });
             }
