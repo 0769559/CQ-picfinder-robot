@@ -174,7 +174,7 @@ async function doSearch(imgURL, db, debug = false) {
                         rpLink = $('#image').attr('src')
                     })
                 }
-                await exts.push(CQ.imgAfter(rpLink))
+                if(rpLink) await exts.push(CQ.imgAfter(rpLink))
             }
         } else if (data.header.message) {
             switch (data.header.message) {
