@@ -18,7 +18,7 @@ QQLight的接口不如酷Q完整，部分功能無法很好的實現，但能夠
 
 # CQ-picfinder-robot
 
-这是一个以 Nodejs 编写的 `~~酷Q~~` `QQLight` 机器人插件，用于通过 [Saucenao](https://saucenao.com/) 和 [WhatAnime](https://trace.moe) 对收到的图片进行搜图、搜番、搜本子，并夹带了许多娱乐向功能（。）
+这是一个以 Nodejs 编写的 ~~`酷Q`~~ `QQLight` 机器人插件，用于通过 [Saucenao](https://saucenao.com/) 和 [WhatAnime](https://trace.moe) 对收到的图片进行搜图、搜番、搜本子，并夹带了许多娱乐向功能（。）
 
 ## 部署流程
 
