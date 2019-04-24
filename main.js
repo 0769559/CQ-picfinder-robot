@@ -296,7 +296,7 @@ async function searchImg(context, customDB = -1) {
                 replyMsg(context, ret.warnMsg);
                 if(ret.exts){
                     for(let mm of ret.exts){
-                        mm = CQ.img(mm)
+                        if(mm.indexOf('[QQPic]')===0) mm = CQ.img(mm);
                         replyMsg(context, mm);
                     }
                 }
