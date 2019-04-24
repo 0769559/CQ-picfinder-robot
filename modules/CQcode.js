@@ -35,6 +35,7 @@ function escape(str, insideCQ = false) {
  */
 function img(file) {
     if(!file) return '';
+    if(file.indexOf('[QQPic]')===0) file = file.replace('[QQPic]','')
     return "[QQ:pic=" + escape(file, true) + "]";
 }
 
@@ -64,10 +65,14 @@ function at(qq) {
     return "[QQ:at=" + qq + "] ";
 }
 
+function imgAfter(file){
+    return '[QQPic]' + file;
+}
 
 export default {
     escape,
     share,
     img,
-    at
+    at,
+    imgAfter
 };

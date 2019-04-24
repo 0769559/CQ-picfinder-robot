@@ -158,25 +158,24 @@ async function doSearch(imgURL, db, debug = false) {
             if (warnMsg.length > 0) warnMsg = warnMsg.substring(0, warnMsg.lastIndexOf("\n"));
 
             if(config.picfinder.originPic){
+                let rpLink = await ''
                 if(result.pixiv_id){
-                    let rpLink = 'https://pixiv.cat/'+result.pixiv_id+'.jpg';
+                    rpLink = await 'https://pixiv.cat/'+result.pixiv_id+'.jpg';
                     await originPic.checkLinkValid(rpLink)
                         .then(()=>{
-                        warnMsg = CQ.img(rpLink)
                     }).catch(()=>{
-                        console.log(thumbnail)
                         let pn = thumbnail.match(result.pixiv_id+'_p(\\d+)')[1]
                         rpLink = 'https://pixiv.cat/'+result.pixiv_id+'-'+(pn+1)+'.jpg'
-                        warnMsg = CQ.img(rpLink)
                     })
                 }
                 if(result.danbooru_id){
                     await originPic.getOrigin(result.ext_urls[0])
                         .then((res)=>{
                         const $ = Cheerio.load(res.data);
-                        warnMsg = CQ.img($('#image').attr('src'))
+                        rpLink = $('#image').attr('src')
                     })
                 }
+                await exts.push(CQ.imgAfter(rpLink))
             }
         } else if (data.header.message) {
             switch (data.header.message) {

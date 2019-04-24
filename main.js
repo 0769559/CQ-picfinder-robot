@@ -296,8 +296,7 @@ async function searchImg(context, customDB = -1) {
                 replyMsg(context, ret.warnMsg);
                 if(ret.exts){
                     for(let mm of ret.exts){
-                        console.log('mm')
-                        console.log(mm)
+                        mm = CQ.img(mm)
                         replyMsg(context, mm);
                     }
                 }
