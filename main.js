@@ -148,7 +148,7 @@ function groupMsg(e, context) {
     if(setting.groupWhiteMode){
         if(!setting.groupWhite.includes(context.group_id)) return;
     }
-    
+
     //进入或退出搜图模式
     let {
         group_id,
@@ -294,6 +294,11 @@ async function searchImg(context, customDB = -1) {
 
                 replyMsg(context, getTime()+'\n'+ret.msg);
                 replyMsg(context, ret.warnMsg);
+                if(ret.exts){
+                    for(let mm of ret.exts){
+                        replyMsg(context, mm);
+                    }
+                }
 
                 //如果需要缓存
                 let needCacheMsgs;

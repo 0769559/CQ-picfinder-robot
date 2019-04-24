@@ -53,7 +53,8 @@
         },
         "groupWhiteMode": false,
         "groupWhite": [],
-        "QQLightTempImage": "D:/工具/QQLight/temp/image/"
+        "QQLightTempImage": "D:/工具/QQLight/temp/image/",
+        "originPic": true
     },
     "mysql": {
         "enable": false,

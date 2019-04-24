@@ -8,4 +8,13 @@ function search(imgURL){
     });
 }
 
-export default search;
+function browse(url){
+    return get(url,{
+        timeout: 6000
+    });
+}
+
+export default {
+    search,
+    browse
+};
