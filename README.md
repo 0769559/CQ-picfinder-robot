@@ -14,9 +14,11 @@ QQLight的接口不如酷Q完整，部分功能無法很好的實現，但能夠
 
 ※config.json中的 QQLightTempImage 必須設置，否則無法正確搜索圖片
 
+***
+
 # CQ-picfinder-robot
 
-这是一个以 Nodejs 编写的酷Q机器人插件，用于通过 [Saucenao](https://saucenao.com/) 和 [WhatAnime](https://trace.moe) 对收到的图片进行搜图、搜番、搜本子，并夹带了许多娱乐向功能（。）
+这是一个以 Nodejs 编写的~~酷Q~~QQLight机器人插件，用于通过 [Saucenao](https://saucenao.com/) 和 [WhatAnime](https://trace.moe) 对收到的图片进行搜图、搜番、搜本子，并夹带了许多娱乐向功能（。）
 
 ## 部署流程
 
@@ -78,102 +80,102 @@ npm run pm2log
 {
     //以下开始都是搜图机器人配置
     "picfinder": {
-        "debug": false,            //调试模式，启用后会在控制台输出每次查询的返回文本
-        "admin": -1,               //指定管理者QQ，请务必设置
-        "autoAddFriend": false,    //自动同意好友申请（false则忽略，但不会拒绝）
-        "addFriendAnswers": [],    //根据问题回答同意好友申请（后续详解
-        "autoAddGroup": false,     //自动同意入群申请（false同上，但可以用命令手动允许，后续有说明）
-        "searchLimit": 30,         //每名用户每日搜索次数限制
-        "textMode": true,          //文字模式发送搜图结果（發送圖片Lag或常常無法顯示可以關閉）
-        //复读机
-        "repeat": {
-            "enable": true,        //开关
-            "times": 3,            //当检测到某个群有这么多次相同发言后会概率参与复读
-            "probability": 40,     //复读概率（百分比）
-            "commonProb": 0.1      //日常复读概率（百分比）
-        },
-        //setu功能
-        "setu": {
-            "enable": false,       //是否启用
-            "allowPM": true,       //是否允许私聊使用
-            "pximgProxy": "",      //设置发送setu时使用的反向代理，后续详解
-            "deleteTime": 30,      //发送后这么多秒自动撤回（0则不撤回，下同）
-            "cd": 600,             //使用冷却时间（秒），每名用户独立，0则无冷却
-            "limit": 30,           //每名用户每日次数限制
-            "whiteGroup": [],      //群组白名单（请按照json数组格式填写）
-            "whiteOnly": false,    //仅允许白名单群使用（与上面的私聊使用是独立的）
-            "whiteCd": 0,          //白名单群组的使用冷却时间
-            "whiteDeleteTime": 0   //白名单群组的撤回时间
-        },
-        //指令正则表达式
-        "regs": {
-            //开启搜图模式
-            "searchModeOn": "竹竹搜[图圖]",
-            //关闭搜图模式
-            "searchModeOff": "[谢謝]+竹竹",
-            //签到
-            "sign": "我(.*)签到",
-            //色图
-            "setu": "(竹竹.*[来來发發给給].*[色瑟][图圖])|(--setu)"
-        },
-        //回复
-        "replys": {
-            //默认回复
-            "default": "必须要发送图片我才能帮你找噢_(:3」」\n支持批量！",
-            //调试模式时
-            "debug": "维护升级中，暂时不能使用，抱歉啦~",
-            //个人搜索次数到达上限时
-            "personLimit": "您今天搜的图太多辣！休息一下明天再来搜吧~",
-            //搜索失败时
-            "failed": "搜索失败惹 QAQ\n有可能是服务器网络爆炸，请重试一次",
-            //签到相关
-            "sign": "签到成功，送您10个赞！",
-            "signed": "您今天已经签到过啦_(:3」∠)_",
-            //开启搜图模式
-            "searchModeOn": "了解～请发送图片吧！支持批量噢！\n如想退出搜索模式请发送“谢谢竹竹”",
-            //已经开启搜图模式
-            "searchModeAlreadyOn": "您已经在搜图模式下啦！\n如想退出搜索模式请发送“谢谢竹竹”",
-            //关闭搜图模式
-            "searchModeOff": "不用谢～",
-            //已经关闭搜图模式
-            "searchModeAlreadyOff": "にゃ～",
-            //setu冷却中
-            "setuLimit": "乖，要懂得节制噢 →_→",
-            //setu请求错误
-            "setuError": "瑟图服务器爆炸惹_(:3」∠)_",
-            //其他不满足发送setu的条件
-            "setuReject": "很抱歉，该功能暂不开放_(:3」」"
-        },
-        "ocr": {
-            "defaultLANG": "eng",
-            "apikey": ""
-        },
-        "groupWhiteMode": true, //是否啟用白名單模式
-        "groupWhite": [], //白名單群組，讓機器人只在特定群啟用
-        "QQLightTempImage": "", //QQLight暫存位置，需要從暫存檔取得圖片url，結尾必須加斜槓
-        "originPic": true //搜圖後是否返回原圖 (高相似度)
-    },
+    "debug": false,            //调试模式，启用后会在控制台输出每次查询的返回文本
+    "admin": -1,               //指定管理者QQ，请务必设置
+    "autoAddFriend": false,    //自动同意好友申请（false则忽略，但不会拒绝）
+    "addFriendAnswers": [],    //根据问题回答同意好友申请（后续详解
+    "autoAddGroup": false,     //自动同意入群申请（false同上，但可以用命令手动允许，后续有说明）
+    "searchLimit": 30,         //每名用户每日搜索次数限制
+    "textMode": true,          //文字模式发送搜图结果（發送圖片Lag或常常無法顯示可以關閉）
+    //复读机
+    "repeat": {
+    "enable": true,        //开关
+    "times": 3,            //当检测到某个群有这么多次相同发言后会概率参与复读
+    "probability": 40,     //复读概率（百分比）
+    "commonProb": 0.1      //日常复读概率（百分比）
+              },
+    //setu功能
+    "setu": {
+    "enable": false,       //是否启用
+    "allowPM": true,       //是否允许私聊使用
+    "pximgProxy": "",      //设置发送setu时使用的反向代理，后续详解
+    "deleteTime": 30,      //发送后这么多秒自动撤回（0则不撤回，下同）
+    "cd": 600,             //使用冷却时间（秒），每名用户独立，0则无冷却
+    "limit": 30,           //每名用户每日次数限制
+    "whiteGroup": [],      //群组白名单（请按照json数组格式填写）
+    "whiteOnly": false,    //仅允许白名单群使用（与上面的私聊使用是独立的）
+    "whiteCd": 0,          //白名单群组的使用冷却时间
+    "whiteDeleteTime": 0   //白名单群组的撤回时间
+            },
+    //指令正则表达式
+    "regs": {
+    //开启搜图模式
+    "searchModeOn": "竹竹搜[图圖]",
+    //关闭搜图模式
+    "searchModeOff": "[谢謝]+竹竹",
+    //签到
+    "sign": "我(.*)签到",
+    //色图
+    "setu": "(竹竹.*[来來发發给給].*[色瑟][图圖])|(--setu)"
+            },
+    //回复
+    "replys": {
+    //默认回复
+    "default": "必须要发送图片我才能帮你找噢_(:3」」\n支持批量！",
+    //调试模式时
+    "debug": "维护升级中，暂时不能使用，抱歉啦~",
+    //个人搜索次数到达上限时
+    "personLimit": "您今天搜的图太多辣！休息一下明天再来搜吧~",
+    //搜索失败时
+    "failed": "搜索失败惹 QAQ\n有可能是服务器网络爆炸，请重试一次",
+    //签到相关
+    "sign": "签到成功，送您10个赞！",
+    "signed": "您今天已经签到过啦_(:3」∠)_",
+    //开启搜图模式
+    "searchModeOn": "了解～请发送图片吧！支持批量噢！\n如想退出搜索模式请发送“谢谢竹竹”",
+    //已经开启搜图模式
+    "searchModeAlreadyOn": "您已经在搜图模式下啦！\n如想退出搜索模式请发送“谢谢竹竹”",
+    //关闭搜图模式
+    "searchModeOff": "不用谢～",
+    //已经关闭搜图模式
+    "searchModeAlreadyOff": "にゃ～",
+    //setu冷却中
+    "setuLimit": "乖，要懂得节制噢 →_→",
+    //setu请求错误
+    "setuError": "瑟图服务器爆炸惹_(:3」∠)_",
+    //其他不满足发送setu的条件
+    "setuReject": "很抱歉，该功能暂不开放_(:3」」"
+              },
+    "ocr": {
+    "defaultLANG": "eng",
+    "apikey": ""
+           },
+    "groupWhiteMode": true, //是否啟用白名單模式
+    "groupWhite": [], //白名單群組，讓機器人只在特定群啟用
+    "QQLightTempImage": "", //QQLight暫存位置，需要從暫存檔取得圖片url，結尾必須加斜槓
+    "originPic": true //搜圖後是否返回原圖 (高相似度)
+                 },
     //数据库配置（用于缓存搜图结果）
     "mysql": {
-        "enable": false,       //是否开启缓存功能
-        "expire": 172800,      //缓存时间（秒），默认为两天（172800秒）
-        "host": "127.0.0.1",   //数据库地址
-        "port": 3306,          //端口
-        "db": "",              //数据库名
-        "user": "",            //用户名
-        "password": "",        //密码
-        "expire": 172800       //缓存时间
-    },
+    "enable": false,       //是否开启缓存功能
+    "expire": 172800,      //缓存时间（秒），默认为两天（172800秒）
+    "host": "127.0.0.1",   //数据库地址
+    "port": 3306,          //端口
+    "db": "",              //数据库名
+    "user": "",            //用户名
+    "password": "",        //密码
+    "expire": 172800       //缓存时间
+             },
     //Saucenao地址，一般请不要动，除非你猜到了我提供此设置的意义（
     "saucenaoHost": [
-        "saucenao.com"
-    ],
+    "saucenao.com"
+                    ],
     //WhatAnime的域名
     "whatanimeHost": "trace.moe",
     //WhatAnime的Cookie，请访问WhatAnime后将Cookie填入此处，填入多个将会被轮次使用
     "whatanimeCookie": [
-        "__cfduid=d25d7bd2b59809f974477d68548d4e3221531298009"
-    ]
+    "__cfduid=d25d7bd2b59809f974477d68548d4e3221531298009"
+                       ]
 }
 ```
 
@@ -255,8 +257,8 @@ TX 十分坑的一点就是，如果你在机器人QQ里设置好友验证方式
 ```json
 "addFriendAnswers": [
     "问题一的答案",
-    "问题二的答案"
-]
+                     "问题二的答案"
+                    ]
 ```
 
 目前貌似最多只可以设置两个问题，请一定要写入与问题个数相等数量的元素，多写会爆炸的
