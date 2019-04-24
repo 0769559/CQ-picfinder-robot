@@ -10,7 +10,7 @@ QQLight的接口不如酷Q完整，部分功能無法很好的實現，但能夠
 
 ．群消息處理可使用白名單模式，新添加的設定都在picfinder最下面。
 
-．加入 [Ascii2d](https://ascii2d.net/) 的搜索，當Saucenao時相似度過低自動轉換至Ascii2d。然而這個網站好像有使用頻率限制，容易GET不到東西。
+．加入 [Ascii2d](https://ascii2d.net/) 的搜索，當Saucenao時相似度過低自動轉換至Ascii2d。~~然而這個網站好像有使用頻率限制，容易GET不到東西。~~ QQLight本身對圖片的解碼似乎有Bug，導致圖片傳送緩慢甚至失敗。
 
 ※config.json中的 QQLightTempImage 必須設置，否則無法正確搜索圖片
 
