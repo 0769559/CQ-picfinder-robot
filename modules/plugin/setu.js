@@ -59,7 +59,7 @@ function sendSetu(context, replyFunc, logger, bot) {
                 url = resolve(proxy, path);
             }
             context.timeout = 30000
-            replyFunc(context, `${ret.url} (p${ret.p})`, true);
+            replyFunc(context, `${ret.url} (p${ret.p})`);
             replyFunc(context, CQcode.img(url));
         }).catch(e => {
             console.error(`${new Date().toLocaleString()}\n${e}`);
