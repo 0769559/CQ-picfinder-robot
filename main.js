@@ -248,8 +248,6 @@ async function searchImg(context, customDB = -1) {
         }
     } else db = customDB;
 
-    context.timeout = 30000
-
     //得到图片链接并搜图
     let msg = context.message;
     let imgs = getImgs(msg);
@@ -396,6 +394,8 @@ function replyMsg(context, msg, at = false) {
 
     if (context.group_id) msgObj.type = 2
     else if (context.user_id) msgObj.type = 1
+
+    if(msg.indexOf('[QQ:pic=')!==-1) context.timeout = 30000;
 
     return new Promise((resolve,reject)=>{
         sendMessage( msgObj )
