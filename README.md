@@ -105,7 +105,8 @@ npm run pm2log
     "whiteGroup": [],      //群组白名单（请按照json数组格式填写）
     "whiteOnly": false,    //仅允许白名单群使用（与上面的私聊使用是独立的）
     "whiteCd": 0,          //白名单群组的使用冷却时间
-    "whiteDeleteTime": 0   //白名单群组的撤回时间
+    "whiteDeleteTime": 0   //白名单群组的撤回时间,
+    "proxiedAddress": true //取代原圖地址，發送代理圖片地址
             },
     //指令正则表达式
     "regs": {
@@ -154,6 +155,7 @@ npm run pm2log
     "groupWhite": [], //白名單群組，讓機器人只在特定群啟用
     "QQLightTempImage": "", //QQLight暫存位置，需要從暫存檔取得圖片url，結尾必須加斜槓
     "originPic": true //搜圖後是否返回原圖 (高相似度)
+    "originWithProxied": true //原圖是否附圖片地址
                  },
     //数据库配置（用于缓存搜图结果）
     "mysql": {

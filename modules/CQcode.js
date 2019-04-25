@@ -35,8 +35,12 @@ function escape(str, insideCQ = false) {
  */
 function img(file) {
     if(!file) return '';
-    if(file.indexOf('[QQPic]')===0) file = file.replace('[QQPic]','')
-    return "[QQ:pic=" + escape(file, true) + "]";
+    let address = '';
+    if(file.indexOf('[QQPic]')===0){
+        file = file.replace('[QQPic]','');
+        address = config.picfinder.originWithAddress?file:'';
+    }
+    return "[QQ:pic=" + escape(file, true) + "]" + address;
 }
 
 

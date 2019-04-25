@@ -23,7 +23,8 @@
             "whiteGroup": [],
             "whiteOnly": false,
             "whiteCd": 0,
-            "whiteDeleteTime": 0
+            "whiteDeleteTime": 0,
+            "proxiedAddress": true
         },
         "regs": {
             "searchModeOn": "竹竹搜[图圖]",
@@ -54,7 +55,8 @@
         "groupWhiteMode": false,
         "groupWhite": [],
         "QQLightTempImage": "D:/工具/QQLight/temp/image/",
-        "originPic": true
+        "originPic": true,,
+        "originWithProxied": true
     },
     "mysql": {
         "enable": false,
