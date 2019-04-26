@@ -184,7 +184,7 @@ npm run pm2log
 ## 更新
 
 ```bash
-git pull
+git pull https://github.com/bvbnjghui/CQ-picfinder-robot
 npm i
 ```
 
